@@ -3,7 +3,7 @@ ARG PHP_VERSION
 FROM php:${PHP_VERSION}-fpm
 
 # install php-ext
-RUN apt-get update && apt-get install -y git wget gnupg vim unzip libxml2-dev libpng-dev libzip-dev libonig-dev lsb-release inetutils-tools mariadb-client libldap2-dev\
+RUN apt-get update && apt-get install -y git wget gnupg vim unzip libxml2-dev libpng-dev libzip-dev libonig-dev lsb-release inetutils-tools default-my-client libldap2-dev\
   && docker-php-ext-install mbstring dom gd zip pdo_mysql ftp ldap\
   && apt-get clean
 
